@@ -1,0 +1,20 @@
+<!--
+  [ES] Plantilla del componente raíz (`App`).
+
+  - `routerLink`: navegación sin recargar la página (SPA).
+  - `<router-outlet>`: aquí el Router "inyecta" el componente de la ruta actual.
+-->
+<nav style="padding:0.5rem; background:#f5f5f5; border-bottom:1px solid #e0e0e0;">
+  <a routerLink="/inici" style="margin-right:1rem;">Inici</a>
+  <a routerLink="/apren" style="margin-right:1rem;">Aprèn</a>
+  <a routerLink="/actua" style="margin-right:1rem;">Actua</a>
+</nav>
+
+<main class="container mt-4">
+  <div class="p-4 bg-light rounded">
+    <h1 class="display-5">Projecte nou</h1>
+    <p class="lead">Utilitza la navegació per accedir a Inici / Aprèn / Actua.</p>
+    <hr class="my-3">
+    <router-outlet></router-outlet>
+  </div>
+</main>
