@@ -1,25 +1,28 @@
-/**
- * [ES] Definición de rutas de la app.
- *
- * - `Routes` es la tabla de enrutado: cada entrada mapea `path` -> `component`.
- * - Las dos últimas rutas son típicas:
- *   - `''` redirige al inicio.
- *   - `'**'` captura cualquier ruta desconocida (404) y redirige.
- */
 import { Routes } from '@angular/router';
-import { IniciComponent } from './inici.component';
-import { AprenComponent } from './apren.component';
-import { ActuaComponent } from './actua.component';
+import { HomeComponent } from './home.component';
+import { AprendreComponent } from './aprendre.component';
+import { ActuarComponent } from './actuar.component';
+import { DadesComponent } from './dades.component';
+import { RecursosComponent } from './recursos.component';
+import { SobreComponent } from './sobre.component';
 
-
+/**
+ * Configuració de rutes de l'aplicació ClimaBCN
+ * 
+ * Rutes principals segons el RD:
+ * - / : Portada (Home/Landing)
+ * - /aprendre : Continguts per tema
+ * - /actuar : Reptes interactius
+ * - /dades : Panell d'indicadors
+ * - /recursos : Recursos i enllaços verificats
+ * - /sobre : Qui som + metodologia + crèdits
+ */
 export const routes: Routes = [
-  // Páginas principales (proyecto nuevo)
-  { path: 'inici', component: IniciComponent },
-  { path: 'apren', component: AprenComponent },
-  { path: 'actua', component: ActuaComponent },
-
-  // Ruta por defecto: cuando no hay path, redirige.
-  { path: '', redirectTo: '/inici', pathMatch: 'full' },
-  // Comodín: si la URL no coincide con ninguna ruta, redirige.
-  { path: '**', redirectTo: '/inici' }
+  { path: '', component: HomeComponent },
+  { path: 'aprendre', component: AprendreComponent },
+  { path: 'actuar', component: ActuarComponent },
+  { path: 'dades', component: DadesComponent },
+  { path: 'recursos', component: RecursosComponent },
+  { path: 'sobre', component: SobreComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' }
 ];

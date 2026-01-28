@@ -1,0 +1,242 @@
+/* Estils per al component Dades */
+
+.dades-container {
+  padding: 2rem 0;
+  background-color: #f5f1e8;
+  min-height: 100vh;
+}
+
+.page-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2d5016;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.page-subtitle {
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* Selector de període */
+.period-selector {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.period-btn {
+  padding: 12px 30px;
+  border: 2px solid #4a7c2c;
+  background: white;
+  color: #4a7c2c;
+  border-radius: 50px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.period-btn:hover {
+  background: #f5f1e8;
+}
+
+.period-btn.active {
+  background: #4a7c2c;
+  color: white;
+}
+
+/* Seccions de gràfiques */
+.chart-section {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d5016;
+  margin-bottom: 25px;
+}
+
+.chart-container {
+  margin: 20px 0;
+}
+
+/* Gràfica de tendència (simplificada) */
+.simple-line-chart {
+  padding: 20px 0;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 300px;
+  gap: 20px;
+}
+
+.bar-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.bar {
+  width: 100%;
+  min-height: 20px;
+  border-radius: 5px 5px 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 5px;
+  transition: all 0.3s;
+}
+
+.bar:hover {
+  opacity: 0.8;
+  transform: scaleY(1.05);
+}
+
+.bar-value {
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.bar-label {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.chart-note {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Gràfica comparativa */
+.comparative-chart {
+  padding: 20px 0;
+}
+
+.comparative-item {
+  margin-bottom: 20px;
+}
+
+.comparative-label {
+  font-weight: 600;
+  color: #2d5016;
+  margin-bottom: 8px;
+  font-size: 1.1rem;
+}
+
+.comparative-bar-wrapper {
+  background: #f5f1e8;
+  border-radius: 10px;
+  height: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.comparative-bar {
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  transition: all 0.3s;
+  min-width: 50px;
+}
+
+.comparative-bar:hover {
+  opacity: 0.9;
+}
+
+.comparative-value {
+  color: white;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Secció d'explicacions */
+.explicacions-section {
+  background: white;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.explicacions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.explicacio-card {
+  background: #f5f1e8;
+  border-radius: 12px;
+  padding: 25px;
+  border-left: 5px solid #4a7c2c;
+  transition: all 0.3s;
+}
+
+.explicacio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.explicacio-tema {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2d5016;
+  margin-bottom: 20px;
+}
+
+.explicacio-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.explicacio-section h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #4a7c2c;
+  margin-bottom: 10px;
+}
+
+.explicacio-section p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chart-bars {
+    height: 200px;
+    gap: 10px;
+  }
+
+  .explicacions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

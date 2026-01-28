@@ -1,0 +1,127 @@
+<!--
+  Plantilla: Actuar
+  
+  Estructura:
+  1. Repte 1: Separació de residus (drag & drop alternatiu)
+  2. Repte 2: Checklist d'estalvi energètic
+  3. Repte 3: Quiz curt sobre canvi climàtic
+-->
+
+<div class="actuar-container">
+  <div class="container">
+    <h1 class="page-title">Actua: Reptes Interactius</h1>
+    <p class="page-subtitle">Cada acció compta. Completa els reptes per aprendre i millorar els teus hàbits.</p>
+
+    <!-- Repte 1: Separació de residus -->
+    <section class="repte-section">
+      <h2 class="repte-title">🌱 Repte 1: Separa correctament els residus</h2>
+      <p class="repte-description">Arrastra cada residu al contenidor adequat. Cada gest compta!</p>
+
+      <div class="residus-game">
+        <div class="items-container">
+          <h3>Residus</h3>
+          <div class="items-grid">
+            <div *ngFor="let item of items" 
+                 class="item" 
+                 [class.placed]="isItemPlaced(item.id)">
+              <span class="item-icon">{{ item.icon }}</span>
+              <span class="item-name">{{ item.name }}</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bins-container">
+          <h3>Contenidors</h3>
+          <div class="bins-grid">
+            <div *ngFor="let bin of bins" 
+                 class="bin"
+                 [class.has-items]="selectedItems[bin.id].length > 0">
+              <div class="bin-header">
+                <span class="bin-icon">{{ bin.icon }}</span>
+                <span class="bin-name">{{ bin.name }}</span>
+              </div>
+              <div class="bin-items">
+                <div *ngFor="let itemId of selectedItems[bin.id]" class="bin-item">
+                  {{ getItemIcon(itemId) }}
+                </div>
+              </div>
+              <div class="bin-selector">
+                <select (change)="selectItem(+$any($event.target).value, bin.id)" class="form-select">
+                  <option value="">Selecciona un residu...</option>
+                  <option *ngFor="let item of items" [value]="item.id" [disabled]="isItemPlaced(item.id)">
+                    {{ item.icon }} {{ item.name }}
+                  </option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="message" *ngIf="message">{{ message }}</div>
+    </section>
+
+    <!-- Repte 2: Checklist d'estalvi energètic -->
+    <section class="repte-section">
+      <h2 class="repte-title">⚡ Repte 2: Checklist d'estalvi energètic</h2>
+      <p class="repte-description">Marca els hàbits que ja fas o que et compromets a fer.</p>
+
+      <div class="checklist">
+        <div *ngFor="let habit of habits" class="habit-item">
+          <label class="habit-label">
+            <input type="checkbox" 
+                   [checked]="habit.checked" 
+                   (change)="toggleHabit(habit.id)">
+            <span class="habit-text">{{ habit.text }}</span>
+            <span class="habit-impact" *ngIf="habit.checked">{{ habit.impact }}</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="impact-summary" *ngIf="totalImpact > 0">
+        <h3>Impacte total estimat: <strong>{{ totalImpact }}% d'estalvi energètic</strong></h3>
+      </div>
+    </section>
+
+    <!-- Repte 3: Quiz -->
+    <section class="repte-section">
+      <h2 class="repte-title">🧠 Repte 3: Quiz sobre canvi climàtic</h2>
+      <p class="repte-description">Respon les preguntes per posar a prova els teus coneixements.</p>
+
+      <div class="quiz">
+        <div *ngFor="let question of quizQuestions; let i = index" class="quiz-question">
+          <h3>{{ i + 1 }}. {{ question.question }}</h3>
+          <div class="quiz-options">
+            <label *ngFor="let option of question.options; let j = index" 
+                   class="quiz-option"
+                   [class.selected]="question.selected === j"
+                   [class.correct]="quizCompleted && j === question.correct"
+                   [class.incorrect]="quizCompleted && question.selected === j && j !== question.correct">
+              <input type="radio" 
+                     [name]="'question' + i" 
+                     [value]="j"
+                     [checked]="question.selected === j"
+                     (change)="selectAnswer(i, j)"
+                     [disabled]="quizCompleted">
+              {{ option }}
+            </label>
+          </div>
+        </div>
+
+        <button class="btn-submit" 
+                (click)="submitQuiz()" 
+                [disabled]="quizCompleted || !allQuestionsAnswered()">
+          Enviar respostes
+        </button>
+
+        <div class="quiz-result" *ngIf="quizCompleted">
+          <h3>Resultat: {{ quizScore }} / {{ quizQuestions.length }}</h3>
+          <p *ngIf="quizScore === quizQuestions.length">🎉 Perfecte! Has encertat totes les preguntes.</p>
+          <p *ngIf="quizScore < quizQuestions.length && quizScore >= quizQuestions.length / 2">👍 Bona feina! Continua aprenent.</p>
+          <p *ngIf="quizScore < quizQuestions.length / 2">💪 No et rendeixis! Revisa els temes i torna a intentar-ho.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+

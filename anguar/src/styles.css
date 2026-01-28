@@ -1,7 +1,65 @@
-/*
-  [ES] Estilos globales de la aplicación.
-  - Se cargan una vez y afectan a toda la app.
-  - Útil para resets, tipografías y estilos compartidos.
+/* 
+  [CA] Estils globals de l'aplicació ClimaBCN
+  
+  Aquests estils s'apliquen a tota l'aplicació.
+  Útil per resets, tipografies i estils compartits.
+  
+  Variables CSS segons el RD:
+  - Primary Green: #2d5016
+  - Secondary Green: #4a7c2c
+  - Light Green: #6b9b47
+  - Accent Earth: #5d4037
+  - Cream: #f5f1e8
+  - Text: #1a1a1a
 */
 
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-green: #2d5016;
+  --secondary-green: #4a7c2c;
+  --light-green: #6b9b47;
+  --accent-earth: #5d4037;
+  --light-brown: #8d6e63;
+  --cream: #f5f1e8;
+  --dark-text: #1a1a1a;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark-text);
+  background-color: var(--cream);
+  margin: 0;
+  padding: 0;
+}
+
+/* Estils base per a enllaços */
+a {
+  color: var(--secondary-green);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Estils base per a botons */
+button, .btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* Utilitats */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.text-center {
+  text-align: center;
+}

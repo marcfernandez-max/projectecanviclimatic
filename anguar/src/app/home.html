@@ -1,0 +1,87 @@
+<!--
+  Plantilla: Home (Portada)
+  
+  Estructura:
+  1. Hero section amb missatge principal i CTAs
+  2. Secció "El repte en xifres" amb 4 targetes flip
+  3. Secció "Per a qui és" amb 3 cards d'audiència
+-->
+
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container hero-content">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <p class="hero-lead">El futur del planeta està a les nostres mans</p>
+        <p class="hero-text">
+          El canvi climàtic és el repte definitiu de la nostra generació. Cada dècima de grau compte, 
+          cada acció importa, i cada persona té el poder de fer la diferència. ClimaBCN és una 
+          plataforma educativa dissenyada per transformar la consciència en acció, oferint els 
+          coneixements, eines i recursos necessaris per entendre la crisi climàtica i participar 
+          activament en les solucions.
+        </p>
+        <p class="hero-text">
+          Aquí trobaràs contingut multimèdia rigorós, activitats interactives i projectes 
+          col·laboratius que connecten l'aprenentatge amb l'impacte real. Perquè entendre el 
+          problema és el primer pas per resoldre'l.
+        </p>
+        <div class="d-flex gap-3 flex-wrap">
+          <a routerLink="/recursos" class="btn btn-primary-custom btn-custom">Explora Recursos</a>
+          <a routerLink="/actuar" class="btn btn-outline-custom btn-custom">Realitza Activitats</a>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="img-placeholder">
+          <i class="bi bi-globe-americas"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Section: El repte en xifres -->
+<section class="stats-section">
+  <div class="container">
+    <h3 class="text-center mb-5 section-title-white">El repte en xifres</h3>
+    <div class="row g-4">
+      <div class="col-md-3 col-sm-6" *ngFor="let stat of stats; let i = index">
+        <div class="flip-card" [class.flipped]="isFlipped(i)" (click)="toggleFlip(i)">
+          <div class="flip-card-inner">
+            <!-- Cara frontal -->
+            <div class="flip-card-front">
+              <span class="stat-number">{{ stat.number }}</span>
+              <span class="stat-label">{{ stat.label }}</span>
+            </div>
+            <!-- Cara trasera -->
+            <div class="flip-card-back">
+              <h4><i [class]="stat.icon"></i> {{ stat.title }}</h4>
+              <p>{{ stat.description }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="click-hint text-center mt-4">
+      <i class="bi bi-hand-index"></i> Fes clic per veure més informació
+    </p>
+  </div>
+</section>
+
+<!-- Target Audience Section: Per a qui és -->
+<section class="audience-section">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">Per a qui és la web?</h2>
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let audience of audiences">
+        <div class="audience-card">
+          <div class="audience-icon text-center">
+            <span style="font-size: 3.5rem;">{{ audience.icon }}</span>
+          </div>
+          <h3>{{ audience.title }}</h3>
+          <p>{{ audience.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+

@@ -1,27 +1,20 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet, RouterLink } from '@angular/router';
-/*
-  * Component principal de l'aplicació
-*/
+import { Component } from '@angular/core';
+import { RouterOutlet, RouterLink, RouterLinkActive } from '@angular/router';
 
 /**
- * [ES] Componente raíz de la app.
- *
- * Conceptos Angular clave:
- * - `@Component(...)`: decorador que convierte la clase en componente (metadatos).
- * - `standalone` implícito: en Angular moderno puedes declarar `imports` aquí (sin módulos).
- * - `RouterOutlet`: placeholder donde el Router renderiza el componente de la ruta activa.
- * - `RouterLink`: directiva para navegación declarativa en plantillas.
- * - `signal(...)`: estado reactivo (Angular Signals) para valores que cambian.
+ * Component arrel de l'aplicació ClimaBCN
+ * 
+ * Aquest component conté:
+ * - Header amb navegació principal
+ * - Router outlet per mostrar les pàgines
+ * - Footer amb enllaços i informació
  */
 @Component({
   selector: 'aplicacio',
-  standalone: true,
-  imports: [RouterOutlet, RouterLink],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
 export class App {
-  // Signal: similar a un "state" reactivo. Se lee con `this.title()` en TS o `title()` en plantilla.
-  protected readonly title = signal('pj9');
+  // Component arrel - no necessita lògica addicional
 }
