@@ -1,20 +1,5 @@
-/* 
-  ============================================
-  ESTILS GLOBALS - ClimaBCN
-  ============================================
-  Aquest fitxer conté tots els estils CSS de l'aplicació ClimaBCN.
-  Variables CSS segons el RD:
-  - Primary Green: #2d5016
-  - Secondary Green: #4a7c2c
-  - Light Green: #6b9b47
-  - Accent Earth: #5d4037
-  - Cream: #f5f1e8
-  - Text: #1a1a1a
-*/
 
-/* ============================================
-   VARIABLES CSS
-   ============================================ */
+
 :root {
   --primary-green: #2d5016;
   --secondary-green: #4a7c2c;
@@ -26,9 +11,6 @@
   --white: #ffffff;
 }
 
-/* ============================================
-   RESET I ESTILS BASE
-   ============================================ */
 * {
   box-sizing: border-box;
 }
@@ -42,14 +24,12 @@ body {
   min-height: 100vh;
 }
 
-/* Asegurar que el componente raíz sea visible */
 aplicacio {
   display: block;
   width: 100%;
   min-height: 100vh;
 }
 
-/* Estils base per a enllaços */
 a {
   color: var(--secondary-green);
   text-decoration: none;
@@ -59,14 +39,12 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Estils base per a botons */
 button, .btn {
   cursor: pointer;
   border: none;
   outline: none;
 }
 
-/* Utilitats */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -77,11 +55,6 @@ button, .btn {
   text-align: center;
 }
 
-/* ============================================
-   COMPONENT APP (Header i Footer)
-   ============================================ */
-
-/* Header */
 .main-header {
   background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
   color: white;
@@ -191,11 +164,6 @@ main {
   text-decoration: none;
 }
 
-/* ============================================
-   COMPONENT HOME
-   ============================================ */
-
-/* Hero Section */
 .hero-section {
   background: linear-gradient(135deg, #4a7c2c 0%, #6b9b47 100%);
   color: white;
@@ -269,7 +237,6 @@ main {
   color: white;
 }
 
-/* Stats Section */
 .stats-section {
   background: linear-gradient(135deg, #5d4037 0%, #8d6e63 100%);
   padding: 70px 0;
@@ -358,7 +325,6 @@ main {
   margin-top: 20px;
 }
 
-/* Audience Section */
 .audience-section {
   padding: 80px 0;
   background-color: #f5f1e8;
@@ -415,9 +381,7 @@ main {
   line-height: 1.7;
 }
 
-/* ============================================
-   COMPONENT APRENDRE
-   ============================================ */
+
 
 .learn-layout {
   display: flex;
@@ -426,7 +390,6 @@ main {
   min-height: 70vh;
 }
 
-/* Sidebar */
 .sidebar {
   width: 250px;
   min-width: 200px;
@@ -482,7 +445,6 @@ main {
   font-weight: 600;
 }
 
-/* Contingut principal */
 .learn-content {
   flex: 1;
 }
@@ -559,9 +521,6 @@ main {
   text-decoration: none;
 }
 
-/* ============================================
-   COMPONENT ACTUAR
-   ============================================ */
 
 .actuar-container {
   padding: 2rem 0;
