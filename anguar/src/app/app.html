@@ -1,0 +1,47 @@
+<!--
+  Plantilla del component arrel (App)
+  
+  Estructura:
+  - Header amb navegació principal
+  - Router outlet per mostrar les pàgines
+  - Footer (opcional)
+-->
+
+<!-- Header amb navegació -->
+<header class="main-header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo-section">
+        <h1 class="logo-title">ClimaBCN</h1>
+        <p class="logo-subtitle">Aprèn i Actua</p>
+      </div>
+      <nav class="main-nav">
+        <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inici</a>
+        <a routerLink="/aprendre" routerLinkActive="active">Aprèn</a>
+        <a routerLink="/actuar" routerLinkActive="active">Actua</a>
+        <a routerLink="/dades" routerLinkActive="active">Dades</a>
+        <a routerLink="/recursos" routerLinkActive="active">Recursos</a>
+        <a routerLink="/sobre" routerLinkActive="active">Sobre</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- Contingut principal (router outlet) -->
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<!-- Footer -->
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-content">
+      <p>&copy; 2024 ClimaBCN — Aprèn i Actua</p>
+      <p>Plataforma educativa per al canvi climàtic a Barcelona</p>
+      <div class="footer-links">
+        <a routerLink="/sobre">Sobre el projecte</a>
+        <a routerLink="/recursos">Recursos</a>
+      </div>
+    </div>
+  </div>
+</footer>

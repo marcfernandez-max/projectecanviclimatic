@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 /**
  * Component: Home (Portada)
@@ -15,7 +16,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink,   MatGridListModule ],
   templateUrl: './home.html',
   styleUrls: ['./home.css']
 })
@@ -53,7 +54,7 @@ export class HomeComponent {
   ];
 
   // Dades per a "Per a qui és"
-  audiences = [
+  titolCards = [
     {
       icon: '👨‍🎓',
       title: 'Estudiants',

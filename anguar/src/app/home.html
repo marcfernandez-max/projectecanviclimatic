@@ -68,17 +68,17 @@
 </section>
 
 <!-- Target Audience Section: Per a qui és -->
-<section class="audience-section">
+<section class="titolCards-section">
   <div class="container">
     <h2 class="section-title text-center mb-5">Per a qui és la web?</h2>
     <div class="row g-4">
-      <div class="col-md-4" *ngFor="let audience of audiences">
-        <div class="audience-card">
-          <div class="audience-icon text-center">
-            <span style="font-size: 3.5rem;">{{ audience.icon }}</span>
+      <div class="col-md-4" *ngFor="let titolCards of titolCards">
+        <div class="titolCards-card">
+          <div class="titolCards-icon text-center">
+            <span style="font-size: 3.5rem;">{{ titolCards.icon }}</span>
           </div>
-          <h3>{{ audience.title }}</h3>
-          <p>{{ audience.description }}</p>
+          <h3>{{ titolCards.title }}</h3>
+          <p>{{ titolCards.description }}</p>
         </div>
       </div>
     </div>

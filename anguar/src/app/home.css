@@ -1,4 +1,5 @@
 /* Estils per al component Home */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 
 /* Hero Section */
 .hero-section {
