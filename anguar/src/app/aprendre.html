@@ -5,7 +5,7 @@
       <li *ngFor="let tema of temas" 
           [class.active]="temaSeleccionat.id === tema.id"
           (click)="seleccionarTema(tema)">
-        <span class="theme-icon">{{ tema.icon }}</span> // la ruta envia a la pàgina aprendre.component.ts y ho treu de la variable tema.icon
+        <span class="theme-icon">{{ tema.icon }}</span>
         <span class="theme-name">{{ tema.titol }}</span>
       </li>
     </ul>
@@ -35,9 +35,6 @@
         <p class="learn-text">{{ temaSeleccionat.senyals }}</p>
       </div>
 
-      <div class="learn-actions">
-        <a routerLink="/actuar" class="btn btn-action">Passa a l'acció →</a>
-      </div>
     </div>
   </main>
 </div>

@@ -1,235 +1,146 @@
-/**
- * ============================================
- * ESTILS CSS - L'aparença visual de la pàgina
- * ============================================
- * 
- * Aquest fitxer conté els estils CSS que només s'apliquen a aquest component.
- * Els estils estan "scoped" (delimitats) a aquest component, no afecten altres pàgines.
- * 
- * CONCEPTES CLAU:
- * - Selectors CSS: .classe, #id, element, etc.
- * - Flexbox: display: flex per crear layouts flexibles
- * - Responsive: @media queries per adaptar-se a diferents mides de pantalla
- * - Transicions: transition per animacions suaus
- * - Pseudo-classes: :hover, :active, etc.
- */
-
-/* ============================================
-   LAYOUT PRINCIPAL
-   ============================================ */
-
-/**
- * Contenidor principal amb layout flexbox
- * 
- * display: flex - Crea un contenidor flexbox
- * gap: 2rem - Espai entre el sidebar i el contingut (32px)
- * padding: 2rem 0 - Espai vertical (32px a dalt i baix)
- * min-height: 70vh - Alçada mínima del 70% de l'alçada de la pantalla
- */
 .learn-layout {
-  display: flex;           /* Activa flexbox */
-  gap: 2rem;              /* Espai entre sidebar i contingut */
-  padding: 2rem 0;        /* Espai vertical */
-  min-height: 70vh;       /* Alçada mínima */
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 0;
+  min-height: 70vh;
 }
 
-/* ============================================
-   SIDEBAR (Barra lateral)
-   ============================================ */
-
-/**
- * Estil del sidebar (barra lateral amb la llista de temes)
- * 
- * width: 250px - Amplada fixa de 250px
- * background: white - Fons blanc
- * border-radius: 12px - Cantonades arrodonides
- * box-shadow: - Ombra per donar profunditat
- * border-left: 6px solid - Borda esquerra verda (accent visual)
- */
 .sidebar {
-  width: 250px;                              /* Amplada fixa */
-  min-width: 200px;                          /* Amplada mínima */
-  background: white;                         /* Fons blanc */
-  border-radius: 12px;                      /* Cantonades arrodonides */
-  padding: 20px;                            /* Espai intern */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06); /* Ombra subtil */
-  border-left: 6px solid #4a7c2c;            /* Borda esquerra verda */
-  height: fit-content;                      /* Alçada segons contingut */
+  width: 250px;
+  min-width: 200px;
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+  border-left: 6px solid #4a7c2c;
+  height: fit-content;
 }
 
-/* Títol del sidebar */
 .sidebar-title {
-  color: #2d5016;          /* Color verd fosc */
-  font-size: 1.3rem;       /* Mida de font */
-  font-weight: 700;        /* Negreta */
-  margin-bottom: 20px;     /* Espai inferior */
-  padding-bottom: 10px;    /* Espai inferior intern */
-  border-bottom: 2px solid #f5f1e8; /* Línia separadora */
+  color: #2d5016;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f5f1e8;
 }
 
-/* Llista de temes */
 .theme-list {
-  list-style: none;        /* Elimina els punts de la llista */
-  padding: 0;              /* Sense padding */
-  margin: 0;              /* Sense marge */
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-/* Cada element de la llista (tema) */
 .theme-list li {
-  padding: 12px 15px;      /* Espai intern */
-  margin-bottom: 8px;      /* Espai entre elements */
-  border-radius: 8px;      /* Cantonades arrodonides */
-  cursor: pointer;        /* Cursor de mà quan passes per sobre */
-  transition: all 0.3s;   /* Transició suau de 0.3 segons */
-  display: flex;          /* Flexbox per alinear icona i text */
-  align-items: center;    /* Alinea verticalment al centre */
-  gap: 12px;              /* Espai entre icona i text */
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-/**
- * Pseudo-classe :hover
- * S'aplica quan l'usuari passa el ratolí per sobre
- * 
- * background-color: canvia el fons
- * transform: translateX(5px) - Desplaça 5px a la dreta (efecte visual)
- */
 .theme-list li:hover {
-  background-color: #f5f1e8;  /* Fons crema clar */
-  transform: translateX(5px); /* Desplaçament a la dreta */
+  background-color: #f5f1e8;
+  transform: translateX(5px);
 }
 
-/**
- * Classe .active (afegida dinàmicament amb [class.active])
- * S'aplica al tema seleccionat
- */
 .theme-list li.active {
-  background-color: #4a7c2c;  /* Fons verd */
-  color: white;              /* Text blanc */
+  background-color: #4a7c2c;
+  color: white;
 }
 
-/* Icona del tema (emoji) */
 .theme-icon {
-  font-size: 1.5rem;  /* Mida de font gran per l'emoji */
+  font-size: 1.5rem;
 }
 
-/* Nom del tema */
 .theme-name {
-  font-weight: 600;  /* Semi-negreta */
+  font-weight: 600;
 }
 
-/* ============================================
-   CONTINGUT PRINCIPAL
-   ============================================ */
-
-/**
- * Contenidor del contingut principal
- * 
- * flex: 1 - Ocupa tot l'espai disponible (el que queda després del sidebar)
- */
 .learn-content {
-  flex: 1;  /* Ocupa l'espai restant */
+  flex: 1;
 }
 
-/* Card principal amb el contingut del tema */
 .learn-card {
-  background: white;                         /* Fons blanc */
-  border-radius: 15px;                      /* Cantonades arrodonides */
-  padding: 40px;                            /* Espai intern gran */
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08); /* Ombra subtil */
+  background: white;
+  border-radius: 15px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Capçalera del card */
 .learn-header {
-  margin-bottom: 30px;      /* Espai inferior */
-  padding-bottom: 20px;     /* Espai inferior intern */
-  border-bottom: 3px solid #f5f1e8; /* Línia separadora */
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #f5f1e8;
 }
 
-/* Títol del tema */
 .learn-title {
-  font-size: 2.2rem;        /* Mida de font gran */
-  font-weight: 700;        /* Negreta */
-  color: #2d5016;          /* Color verd fosc */
-  display: flex;           /* Flexbox per alinear icona i text */
-  align-items: center;      /* Alinea verticalment */
-  gap: 15px;               /* Espai entre icona i text */
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2d5016;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-/* Icona del tema al títol */
 .learn-icon {
-  font-size: 2.5rem;  /* Mida de font molt gran per l'emoji */
+  font-size: 2.5rem;
 }
 
-/* Secció de contingut (Aprèn, Per què importa, etc.) */
 .learn-section {
-  margin-bottom: 30px;  /* Espai entre seccions */
+  margin-bottom: 30px;
 }
 
-/* Subtítol de cada secció */
 .section-subtitle {
-  font-size: 1.4rem;              /* Mida de font */
-  font-weight: 600;              /* Semi-negreta */
-  color: #4a7c2c;                /* Color verd */
-  margin-bottom: 15px;          /* Espai inferior */
-  padding-left: 15px;            /* Espai esquerre */
-  border-left: 4px solid #4a7c2c; /* Borda esquerra verda (accent) */
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #4a7c2c;
+  margin-bottom: 15px;
+  padding-left: 15px;
+  border-left: 4px solid #4a7c2c;
 }
 
-/* Text de cada secció */
 .learn-text {
-  font-size: 1.1rem;      /* Mida de font llegible */
-  line-height: 1.8;       /* Alçada de línia (espai entre línies) */
-  color: #1a1a1a;         /* Color de text fosc */
-  margin-bottom: 0;       /* Sense marge inferior */
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #1a1a1a;
+  margin-bottom: 0;
 }
 
-/* Secció d'accions (botó) */
 .learn-actions {
-  margin-top: 40px;       /* Espai superior */
-  padding-top: 30px;       /* Espai superior intern */
-  border-top: 2px solid #f5f1e8; /* Línia separadora */
-  text-align: center;     /* Centra el botó */
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 2px solid #f5f1e8;
+  text-align: center;
 }
 
-/* Botó d'acció */
 .btn-action {
-  background-color: #4a7c2c;  /* Fons verd */
-  color: white;               /* Text blanc */
-  padding: 14px 35px;         /* Espai intern del botó */
-  border-radius: 50px;      /* Cantonades molt arrodonides (pill shape) */
-  text-decoration: none;      /* Sense subratllat */
-  font-weight: 600;          /* Semi-negreta */
-  transition: all 0.3s;      /* Transició suau */
-  display: inline-block;     /* Permet padding i margin */
+  background-color: #4a7c2c;
+  color: white;
+  padding: 14px 35px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
+  display: inline-block;
 }
 
-/**
- * Estat hover del botó
- * S'aplica quan l'usuari passa el ratolí per sobre
- */
 .btn-action:hover {
-  background-color: #2d5016;              /* Fons verd més fosc */
-  transform: translateY(-3px);           /* Desplaçament cap amunt (efecte 3D) */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Ombra més marcada */
-  color: white;                           /* Text blanc (manté) */
+  background-color: #2d5016;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  color: white;
 }
 
-/* ============================================
-   DISSENY RESPONSIVE (Mòbil)
-   ============================================ */
-
-/**
- * Media query: S'aplica quan l'amplada de pantalla és menor a 768px
- * Això adapta el layout per a dispositius mòbils
- */
 @media (max-width: 768px) {
-  /* Canvia el layout de horitzontal a vertical */
   .learn-layout {
-    flex-direction: column;  /* Columna en lloc de fila */
+    flex-direction: column;
   }
 
-  /* El sidebar ocupa tot l'ample */
   .sidebar {
-    width: 100%;  /* Amplada completa */
+    width: 100%;
   }
 }

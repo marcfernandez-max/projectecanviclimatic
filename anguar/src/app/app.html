@@ -1,13 +1,3 @@
-<!--
-  Plantilla del component arrel (App)
-  
-  Estructura:
-  - Header amb navegació principal
-  - Router outlet per mostrar les pàgines
-  - Footer (opcional)
--->
-
-<!-- Header amb navegació -->
 <header class="main-header">
   <div class="container">
     <div class="header-content">
@@ -18,21 +8,15 @@
       <nav class="main-nav">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Inici</a>
         <a routerLink="/aprendre" routerLinkActive="active">Aprèn</a>
-        <a routerLink="/actuar" routerLinkActive="active">Actua</a>
-        <a routerLink="/dades" routerLinkActive="active">Dades</a>
         <a routerLink="/recursos" routerLinkActive="active">Recursos</a>
         <a routerLink="/sobre" routerLinkActive="active">Sobre</a>
       </nav>
     </div>
   </div>
 </header>
-
-<!-- Contingut principal (router outlet) -->
 <main>
   <router-outlet></router-outlet>
 </main>
-
-<!-- Footer -->
 <footer class="main-footer">
   <div class="container">
     <div class="footer-content">

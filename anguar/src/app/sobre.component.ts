@@ -2,16 +2,6 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 
-/**
- * Component: Sobre
- * 
- * Objectiu: Qui som + metodologia + crèdits
- * 
- * Contingut:
- * - Informació sobre el projecte
- * - Metodologia de dades
- * - Crèdits i fonts
- */
 @Component({
   selector: 'app-sobre',
   standalone: true,
@@ -20,14 +10,12 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./sobre.css']
 })
 export class SobreComponent {
-  // Informació del projecte
   projectInfo = {
     nom: 'ClimaBCN — Aprèn i Actua',
     descripcio: 'Plataforma educativa dissenyada per transformar la consciència climàtica en acció, oferint els coneixements, eines i recursos necessaris per entendre la crisi climàtica i participar activament en les solucions.',
     objectiu: 'Fer la ciència del clima comprensible, accessible i accionable per a estudiants, professorat i qualsevol persona interessada en el futur del planeta.'
   };
 
-  // Metodologia
   metodologia = [
     {
       titol: 'Fonts de dades',
@@ -43,7 +31,6 @@ export class SobreComponent {
     }
   ];
 
-  // Crèdits
   credits = [
     {
       categoria: 'Desenvolupament',

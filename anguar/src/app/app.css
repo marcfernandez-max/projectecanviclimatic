@@ -1,6 +1,3 @@
-/* Estils globals del component App (header i footer) */
-
-/* Header */
 .main-header {
   background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
   color: white;
@@ -62,14 +59,12 @@
   font-weight: 600;
 }
 
-/* Main content area */
 main {
   min-height: calc(100vh - 200px);
   width: 100%;
   display: block;
 }
 
-/* Footer */
 .main-footer {
   background: #2d5016;
   color: white;
@@ -108,7 +103,6 @@ main {
   background: rgba(255, 255, 255, 0.2);
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;

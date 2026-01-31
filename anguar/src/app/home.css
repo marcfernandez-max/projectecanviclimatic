@@ -1,221 +1,136 @@
-/* Estils per al component Home */
-@import '@angular/material/prebuilt-themes/indigo-pink.css';
+:host {
+  --verde-principal: #2d5016;
+  --verde-secundario: #4a7c2c;
+  --verde-claro: #6b9b47;
+  --marron-acento: #5d4037;
+  --marron-claro: #8d6e63;
+  --crema: #f5f1e8;
+}
 
-/* Hero Section */
-.hero-section {
-  background: linear-gradient(135deg, #4a7c2c 0%, #6b9b47 100%);
+.seccion-hero {
+  background: linear-gradient(135deg, var(--verde-secundario) 0%, var(--verde-claro) 100%);
   color: white;
-  padding: 80px 0 70px;
-  position: relative;
-  overflow: hidden;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero-lead {
-  font-size: 1.4rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
-  font-weight: 500;
-}
-
-.hero-text {
-  font-size: 1.15rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-}
-
-.btn-custom {
-  padding: 14px 35px;
-  font-size: 1.1rem;
-  border-radius: 50px;
-  transition: all 0.3s;
-  text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  display: inline-block;
-}
-
-.btn-primary-custom {
-  background-color: white;
-  color: #2d5016;
-  border: none;
-}
-
-.btn-primary-custom:hover {
-  background-color: #f5f1e8;
-  transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  color: #2d5016;
-}
-
-.btn-outline-custom {
-  border: 2px solid white;
-  color: white;
-  background: transparent;
-}
-
-.btn-outline-custom:hover {
-  background-color: white;
-  color: #2d5016;
-}
-
-.img-placeholder {
+.placeholder-imagen {
   background: rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  padding: 60px;
-  text-align: center;
-  font-size: 8rem;
+  border-radius: 1rem;
+}
+
+.seccion-estadisticas {
+  background: linear-gradient(135deg, var(--marron-acento) 0%, var(--marron-claro) 100%);
   color: white;
 }
 
-/* Stats Section */
-.stats-section {
-  background: linear-gradient(135deg, #5d4037 0%, #8d6e63 100%);
-  padding: 70px 0;
-  color: white;
-}
-
-.section-title-white {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: white;
-}
-
-.flip-card {
-  background-color: transparent;
-  width: 100%;
+.tarjeta-volteable {
   height: 280px;
   perspective: 1000px;
   cursor: pointer;
 }
 
-.flip-card-inner {
+.tarjeta-interior {
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
 }
 
-.flip-card.flipped .flip-card-inner {
+.tarjeta-volteable.volteada .tarjeta-interior {
   transform: rotateY(180deg);
 }
 
-.flip-card-front,
-.flip-card-back {
+.cara-frontal,
+.cara-trasera {
   position: absolute;
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 15px;
-  padding: 30px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  border-radius: 1rem;
 }
 
-.flip-card-front {
+.cara-frontal {
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
 }
 
-.flip-card-back {
-  background: rgba(255, 255, 255, 0.25);
+.cara-trasera {
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
   transform: rotateY(180deg);
 }
 
-.stat-number {
+.numero-dato {
   font-size: 3rem;
   font-weight: 700;
-  display: block;
-  margin-bottom: 10px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.stat-label {
-  font-size: 1rem;
-  opacity: 0.95;
-  line-height: 1.4;
+.cara-trasera h4 { color: var(--verde-principal); }
+.cara-trasera p { color: #333; }
+
+.seccion-hero a[mat-raised-button] {
+  background-color: white !important;
+  color: var(--verde-principal) !important;
 }
 
-.flip-card-back h4 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
+.seccion-hero a[mat-stroked-button] {
+  border-color: white !important;
+  color: white !important;
 }
 
-.flip-card-back p {
-  font-size: 0.95rem;
-  line-height: 1.6;
+.seccion-hero a[mat-stroked-button]:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
 }
 
-.click-hint {
-  opacity: 0.9;
-  font-size: 0.95rem;
-  margin-top: 20px;
+.cara-frontal.mat-mdc-card,
+.cara-trasera.mat-mdc-card {
+  box-shadow: none;
 }
 
-/* Audience Section */
-.audience-section {
-  padding: 80px 0;
-  background-color: #f5f1e8;
+.seccion-audiencia { background-color: var(--crema); }
+
+.tarjeta-audiencia {
+  border-top: 5px solid var(--verde-secundario);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.section-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: #2d5016;
-  margin-bottom: 1.5rem;
-  position: relative;
-  padding-bottom: 15px;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(to right, #4a7c2c, #6b9b47);
-  border-radius: 2px;
-}
-
-.audience-card {
-  background: white;
-  border-radius: 15px;
-  padding: 40px 30px;
-  height: 100%;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s;
-  border-top: 5px solid #4a7c2c;
-}
-
-.audience-card:hover {
+.tarjeta-audiencia:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
 }
 
-.audience-icon {
-  margin-bottom: 20px;
-}
+.icono-audiencia { font-size: 3.5rem; }
+.titulo-audiencia { color: var(--verde-principal); font-weight: 600; }
+.titulo-seccion { color: var(--verde-principal); }
 
-.audience-card h3 {
-  color: #2d5016;
+.seccion-faq { background-color: white; }
+.seccion-faq .accordion-button {
+  background-color: var(--crema);
+  color: var(--verde-principal);
   font-weight: 600;
+  font-size: 1.05rem;
+  padding: 1.2rem 1.5rem;
+}
+.seccion-faq .accordion-button:not(.collapsed) {
+  background-color: var(--verde-secundario);
+  color: white;
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+}
+.seccion-faq .accordion-button:focus {
+  box-shadow: 0 0 0 0.25rem rgba(74, 124, 44, 0.25);
+  border-color: var(--verde-secundario);
+}
+.seccion-faq .accordion-item {
+  border: none;
   margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
 }
-
-.audience-card p {
-  color: #1a1a1a;
-  line-height: 1.7;
+.seccion-faq .accordion-body {
+  background-color: #fafafa;
+  line-height: 1.9;
+  padding: 1.5rem;
+  font-size: 1rem;
 }
-

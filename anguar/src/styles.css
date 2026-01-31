@@ -1,57 +1,35 @@
-/* 
-  ============================================
-  ESTILS GLOBALS - ClimaBCN
-  ============================================
-  Aquest fitxer conté tots els estils CSS de l'aplicació ClimaBCN.
-  Variables CSS segons el RD:
-  - Primary Green: #2d5016
-  - Secondary Green: #4a7c2c
-  - Light Green: #6b9b47
-  - Accent Earth: #5d4037
-  - Cream: #f5f1e8
-  - Text: #1a1a1a
-*/
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 
-/* ============================================
-   VARIABLES CSS
-   ============================================ */
 :root {
-  --primary-green: #2d5016;
-  --secondary-green: #4a7c2c;
-  --light-green: #6b9b47;
-  --accent-earth: #5d4037;
-  --light-brown: #8d6e63;
-  --cream: #f5f1e8;
-  --dark-text: #1a1a1a;
-  --white: #ffffff;
+  --verde-principal: #2d5016;
+  --verde-secundario: #4a7c2c;
+  --verde-claro: #6b9b47;
+  --marron-acento: #5d4037;
+  --marron-claro: #8d6e63;
+  --crema: #f5f1e8;
+  --texto-oscuro: #1a1a1a;
+  --blanco: #ffffff;
 }
 
-/* ============================================
-   RESET I ESTILS BASE
-   ============================================ */
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--dark-text);
-  background-color: var(--cream);
+  color: var(--texto-oscuro);
+  background-color: var(--crema);
   margin: 0;
   padding: 0;
   min-height: 100vh;
 }
 
-/* Asegurar que el componente raíz sea visible */
 aplicacio {
   display: block;
   width: 100%;
   min-height: 100vh;
 }
 
-/* Estils base per a enllaços */
 a {
-  color: var(--secondary-green);
+  color: var(--verde-secundario);
   text-decoration: none;
 }
 
@@ -59,14 +37,12 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Estils base per a botons */
 button, .btn {
   cursor: pointer;
   border: none;
   outline: none;
 }
 
-/* Utilitats */
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -77,11 +53,6 @@ button, .btn {
   text-align: center;
 }
 
-/* ============================================
-   COMPONENT APP (Header i Footer)
-   ============================================ */
-
-/* Header */
 .main-header {
   background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
   color: white;
@@ -144,14 +115,12 @@ button, .btn {
   font-weight: 600;
 }
 
-/* Main content area */
 main {
   min-height: calc(100vh - 200px);
   width: 100%;
   display: block;
 }
 
-/* Footer */
 .main-footer {
   background: #2d5016;
   color: white;
@@ -191,11 +160,6 @@ main {
   text-decoration: none;
 }
 
-/* ============================================
-   COMPONENT HOME
-   ============================================ */
-
-/* Hero Section */
 .hero-section {
   background: linear-gradient(135deg, #4a7c2c 0%, #6b9b47 100%);
   color: white;
@@ -269,101 +233,6 @@ main {
   color: white;
 }
 
-/* Stats Section */
-.stats-section {
-  background: linear-gradient(135deg, #5d4037 0%, #8d6e63 100%);
-  padding: 70px 0;
-  color: white;
-}
-
-.section-title-white {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: white;
-}
-
-.flip-card {
-  background-color: transparent;
-  width: 100%;
-  height: 280px;
-  perspective: 1000px;
-  cursor: pointer;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.flip-card.flipped .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 15px;
-  padding: 30px 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.flip-card-front {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-}
-
-.flip-card-back {
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(10px);
-  transform: rotateY(180deg);
-}
-
-.stat-number {
-  font-size: 3rem;
-  font-weight: 700;
-  display: block;
-  margin-bottom: 10px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.stat-label {
-  font-size: 1rem;
-  opacity: 0.95;
-  line-height: 1.4;
-}
-
-.flip-card-back h4 {
-  font-size: 1.3rem;
-  margin-bottom: 15px;
-}
-
-.flip-card-back p {
-  font-size: 0.95rem;
-  line-height: 1.6;
-}
-
-.click-hint {
-  opacity: 0.9;
-  font-size: 0.95rem;
-  margin-top: 20px;
-}
-
-/* Audience Section */
-.audience-section {
-  padding: 80px 0;
-  background-color: #f5f1e8;
-}
-
 .section-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -385,40 +254,6 @@ main {
   border-radius: 2px;
 }
 
-.audience-card {
-  background: white;
-  border-radius: 15px;
-  padding: 40px 30px;
-  height: 100%;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-  transition: all 0.3s;
-  border-top: 5px solid #4a7c2c;
-}
-
-.audience-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-}
-
-.audience-icon {
-  margin-bottom: 20px;
-}
-
-.audience-card h3 {
-  color: #2d5016;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
-.audience-card p {
-  color: #1a1a1a;
-  line-height: 1.7;
-}
-
-/* ============================================
-   COMPONENT APRENDRE
-   ============================================ */
-
 .learn-layout {
   display: flex;
   gap: 2rem;
@@ -426,7 +261,6 @@ main {
   min-height: 70vh;
 }
 
-/* Sidebar */
 .sidebar {
   width: 250px;
   min-width: 200px;
@@ -482,7 +316,6 @@ main {
   font-weight: 600;
 }
 
-/* Contingut principal */
 .learn-content {
   flex: 1;
 }
@@ -559,16 +392,6 @@ main {
   text-decoration: none;
 }
 
-/* ============================================
-   COMPONENT ACTUAR
-   ============================================ */
-
-.actuar-container {
-  padding: 2rem 0;
-  background-color: #f5f1e8;
-  min-height: 100vh;
-}
-
 .page-title {
   font-size: 2.5rem;
   font-weight: 700;
@@ -605,7 +428,6 @@ main {
   margin-bottom: 25px;
 }
 
-/* Repte 1: Residus */
 .residus-game {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -728,7 +550,6 @@ main {
   color: #2d5016;
 }
 
-/* Repte 2: Checklist */
 .checklist {
   margin-top: 20px;
 }
@@ -779,7 +600,6 @@ main {
   margin: 0;
 }
 
-/* Repte 3: Quiz */
 .quiz {
   margin-top: 20px;
 }
@@ -884,17 +704,6 @@ main {
   margin: 10px 0;
 }
 
-/* ============================================
-   COMPONENT DADES
-   ============================================ */
-
-.dades-container {
-  padding: 2rem 0;
-  background-color: #f5f1e8;
-  min-height: 100vh;
-}
-
-/* Selector de període */
 .period-selector {
   display: flex;
   justify-content: center;
@@ -922,7 +731,6 @@ main {
   color: white;
 }
 
-/* Seccions de gràfiques */
 .chart-section {
   background: white;
   border-radius: 15px;
@@ -935,7 +743,6 @@ main {
   margin: 20px 0;
 }
 
-/* Gràfica de tendència */
 .simple-line-chart {
   padding: 20px 0;
 }
@@ -994,7 +801,6 @@ main {
   text-align: center;
 }
 
-/* Gràfica comparativa */
 .comparative-chart {
   padding: 20px 0;
 }
@@ -1039,7 +845,6 @@ main {
   font-size: 0.95rem;
 }
 
-/* Secció d'explicacions */
 .explicacions-section {
   background: white;
   border-radius: 15px;
@@ -1093,10 +898,6 @@ main {
   color: #1a1a1a;
   margin: 0;
 }
-
-/* ============================================
-   COMPONENT RECURSOS
-   ============================================ */
 
 .recursos-container {
   padding: 2rem 0;
@@ -1231,10 +1032,6 @@ main {
   text-decoration: none;
 }
 
-/* ============================================
-   COMPONENT SOBRE
-   ============================================ */
-
 .sobre-container {
   padding: 2rem 0;
   background-color: #f5f1e8;
@@ -1249,7 +1046,6 @@ main {
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Projecte */
 .project-card {
   padding: 25px;
   background: #f5f1e8;
@@ -1291,7 +1087,6 @@ main {
   margin: 0;
 }
 
-/* Metodologia */
 .metodologia-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -1325,7 +1120,6 @@ main {
   margin: 0;
 }
 
-/* Crèdits */
 .credits-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -1370,7 +1164,6 @@ main {
   font-size: 1.2rem;
 }
 
-/* Enllaços */
 .links-section {
   display: flex;
   justify-content: center;
@@ -1397,12 +1190,7 @@ main {
   text-decoration: none;
 }
 
-/* ============================================
-   RESPONSIVE DESIGN
-   ============================================ */
-
 @media (max-width: 768px) {
-  /* Header */
   .header-content {
     flex-direction: column;
     text-align: center;
@@ -1416,13 +1204,11 @@ main {
     font-size: 1.5rem;
   }
 
-  /* Home */
   .img-placeholder {
     font-size: 4rem;
     padding: 40px;
   }
 
-  /* Aprendre */
   .learn-layout {
     flex-direction: column;
   }
@@ -1431,12 +1217,10 @@ main {
     width: 100%;
   }
 
-  /* Actuar */
   .residus-game {
     grid-template-columns: 1fr;
   }
 
-  /* Dades */
   .chart-bars {
     height: 200px;
     gap: 10px;
@@ -1446,12 +1230,10 @@ main {
     grid-template-columns: 1fr;
   }
 
-  /* Recursos */
   .recursos-list {
     grid-template-columns: 1fr;
   }
 
-  /* Sobre */
   .metodologia-grid,
   .credits-grid {
     grid-template-columns: 1fr;

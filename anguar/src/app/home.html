@@ -1,87 +1,90 @@
-<!--
-  Plantilla: Home (Portada)
-  
-  Estructura:
-  1. Hero section amb missatge principal i CTAs
-  2. Secció "El repte en xifres" amb 4 targetes flip
-  3. Secció "Per a qui és" amb 3 cards d'audiència
--->
-
-<!-- Hero Section -->
-<section class="hero-section">
-  <div class="container hero-content">
-    <div class="row align-items-center">
-      <div class="col-lg-6 mb-4 mb-lg-0">
-        <p class="hero-lead">El futur del planeta està a les nostres mans</p>
-        <p class="hero-text">
+<section class="seccion-hero py-5">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-lg-6">
+        <p class="fs-4 fw-500 mb-3">El futur del planeta està a les nostres mans</p>
+        <p class="lead mb-4">
           El canvi climàtic és el repte definitiu de la nostra generació. Cada dècima de grau compte, 
           cada acció importa, i cada persona té el poder de fer la diferència. ClimaBCN és una 
-          plataforma educativa dissenyada per transformar la consciència en acció, oferint els 
-          coneixements, eines i recursos necessaris per entendre la crisi climàtica i participar 
-          activament en les solucions.
+          plataforma educativa dissenyada per transformar la consciència en acció.
         </p>
-        <p class="hero-text">
+        <p class="mb-4">
           Aquí trobaràs contingut multimèdia rigorós, activitats interactives i projectes 
-          col·laboratius que connecten l'aprenentatge amb l'impacte real. Perquè entendre el 
-          problema és el primer pas per resoldre'l.
+          col·laboratius que connecten l'aprenentatge amb l'impacte real.
         </p>
-        <div class="d-flex gap-3 flex-wrap">
-          <a routerLink="/recursos" class="btn btn-primary-custom btn-custom">Explora Recursos</a>
-          <a routerLink="/actuar" class="btn btn-outline-custom btn-custom">Realitza Activitats</a>
+        <div class="d-flex gap-2 flex-wrap">
+          <a mat-raised-button color="primary" routerLink="/recursos">Explora Recursos</a>
         </div>
       </div>
-      <div class="col-lg-6">
-        <div class="img-placeholder">
-          <i class="bi bi-globe-americas"></i>
+      <div class="col-lg-6 text-center">
+        <div class="placeholder-imagen d-flex align-items-center justify-content-center p-5">
+          <i class="bi bi-globe-americas display-1 text-white"></i>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<!-- Stats Section: El repte en xifres -->
-<section class="stats-section">
+<section class="seccion-estadisticas py-5">
   <div class="container">
-    <h3 class="text-center mb-5 section-title-white">El repte en xifres</h3>
+    <h2 class="text-center text-white fw-bold mb-5 display-5">El repte en xifres</h2>
     <div class="row g-4">
-      <div class="col-md-3 col-sm-6" *ngFor="let stat of stats; let i = index">
-        <div class="flip-card" [class.flipped]="isFlipped(i)" (click)="toggleFlip(i)">
-          <div class="flip-card-inner">
-            <!-- Cara frontal -->
-            <div class="flip-card-front">
-              <span class="stat-number">{{ stat.number }}</span>
-              <span class="stat-label">{{ stat.label }}</span>
-            </div>
-            <!-- Cara trasera -->
-            <div class="flip-card-back">
-              <h4><i [class]="stat.icon"></i> {{ stat.title }}</h4>
-              <p>{{ stat.description }}</p>
-            </div>
+      <div class="col-md-6 col-lg-3" *ngFor="let stat of stats; let i = index">
+        <div class="tarjeta-volteable" [class.volteada]="isFlipped(i)" (click)="toggleFlip(i)">
+          <div class="tarjeta-interior text-center">
+            <mat-card class="cara-frontal position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center p-4">
+              <span class="numero-dato d-block mb-2">{{ stat.number }}</span>
+              <span class="opacity-90">{{ stat.label }}</span>
+            </mat-card>
+            <mat-card class="cara-trasera position-absolute top-0 start-0 w-100 h-100 d-flex flex-column justify-content-center align-items-center p-4">
+              <h4 class="mb-3">{{ stat.icon }} {{ stat.title }}</h4>
+              <p class="small mb-0">{{ stat.description }}</p>
+            </mat-card>
           </div>
         </div>
       </div>
     </div>
-    <p class="click-hint text-center mt-4">
-      <i class="bi bi-hand-index"></i> Fes clic per veure més informació
+    <p class="text-center text-white mt-4 small opacity-90">
+      <i class="bi bi-hand-index me-1"></i> Fes clic per veure més informació
     </p>
   </div>
 </section>
-
-<!-- Target Audience Section: Per a qui és -->
-<section class="titolCards-section">
+<section class="seccion-audiencia py-5">
   <div class="container">
-    <h2 class="section-title text-center mb-5">Per a qui és la web?</h2>
+    <h2 class="text-center fw-bold mb-5 display-5 titulo-seccion">Per a qui és la web?</h2>
     <div class="row g-4">
-      <div class="col-md-4" *ngFor="let titolCards of titolCards">
-        <div class="titolCards-card">
-          <div class="titolCards-icon text-center">
-            <span style="font-size: 3.5rem;">{{ titolCards.icon }}</span>
+      <div class="col-md-4" *ngFor="let card of titolCards">
+        <mat-card class="tarjeta-audiencia h-100">
+          <mat-card-content class="text-center p-4">
+            <div class="icono-audiencia mb-3">{{ card.icon }}</div>
+            <h3 class="titulo-audiencia mb-3">{{ card.title | capitalitzar }}</h3>
+            <p class="text-body mb-0">{{ card.description }}</p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="seccion-faq py-5">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5 display-5 titulo-seccion">Preguntes Freqüents</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item" *ngFor="let faq of faqs; let i = index">
+            <h2 class="accordion-header">
+              <button class="accordion-button" [class.collapsed]="i !== 0" type="button" data-bs-toggle="collapse"
+                [attr.data-bs-target]="'#faq' + i" [attr.aria-expanded]="i === 0" [attr.aria-controls]="'faq' + i">
+                {{ faq.pregunta }}
+              </button>
+            </h2>
+            <div [id]="'faq' + i" class="accordion-collapse collapse" [class.show]="i === 0" data-bs-parent="#faqAccordion">
+              <div class="accordion-body">
+                {{ faq.resposta }}
+              </div>
+            </div>
           </div>
-          <h3>{{ titolCards.title }}</h3>
-          <p>{{ titolCards.description }}</p>
         </div>
       </div>
     </div>
   </div>
 </section>
-

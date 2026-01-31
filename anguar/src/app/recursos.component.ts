@@ -1,15 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-/**
- * Component: Recursos
- * 
- * Objectiu: Enllaços curats i descarregables
- * 
- * Contingut:
- * - Targetes per tipus: guies, datasets, projectes locals, normativa
- * - Sempre: font + data + breu resum
- */
 @Component({
   selector: 'app-recursos',
   standalone: true,
