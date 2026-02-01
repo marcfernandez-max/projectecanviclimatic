@@ -34,7 +34,7 @@ export class SobreComponent {
   credits = [
     {
       categoria: 'Desenvolupament',
-      items: ['Desenvolupat amb Angular 17+', 'Disseny inspirat en principis d\'accessibilitat i UX', 'Codi obert disponible a GitHub']
+      items: ['Angular', 'Codi a GitHub']
     },
     {
       categoria: 'Fonts de dades',
@@ -42,7 +42,7 @@ export class SobreComponent {
     },
     {
       categoria: 'Recursos gràfics',
-      items: ['Bootstrap Icons', 'Google Fonts (Montserrat/Inter)', 'Il·lustracions pròpies']
+      items: ['Bootstrap Icons', 'Il·lustracions pròpies']
     }
   ];
 }

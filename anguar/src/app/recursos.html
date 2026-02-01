@@ -1,37 +1,20 @@
 <div class="recursos-container">
   <div class="container">
     <h1 class="page-title">Recursos i Enllaços</h1>
-    <p class="page-subtitle">Col·lecció curata de recursos, guies, datasets i normativa relacionada amb el canvi climàtic a Barcelona.</p>
+    <p class="page-subtitle">Guies, datasets i normativa sobre canvi climàtic a Barcelona.</p>
 
     <div class="recursos-grid">
-      <div *ngFor="let categoria of recursos" class="categoria-section">
-        <div class="categoria-header">
-          <span class="categoria-icon">{{ categoria.icon }}</span>
-          <h2 class="categoria-title">{{ categoria.categoria }}</h2>
-        </div>
-
+      <div *ngFor="let cat of categories" class="categoria-section">
+        <h2 class="categoria-title">{{ cat.nom }}</h2>
         <div class="recursos-list">
-          <div *ngFor="let recurs of categoria.items" class="recurs-card">
-            <div class="recurs-header">
-              <h3 class="recurs-titol">{{ recurs.titol }}</h3>
-              <span class="recurs-tipus">{{ recurs.tipus }}</span>
-            </div>
-            <p class="recurs-descripcio">{{ recurs.descripcio }}</p>
-            <div class="recurs-meta">
-              <div class="meta-item">
-                <strong>Font:</strong> {{ recurs.font }}
-              </div>
-              <div class="meta-item">
-                <strong>Data:</strong> {{ recurs.data }}
-              </div>
-            </div>
-            <a [href]="recurs.enllac" class="btn-recurs" target="_blank" rel="noopener noreferrer">
-              Accedir al recurs →
-            </a>
+          <div *ngFor="let r of cat.recursos" class="recurs-card">
+            <h3 class="recurs-titol">{{ r.titol }}</h3>
+            <p class="recurs-text">{{ r.text }}</p>
+            <p class="recurs-meta">{{ r.font }} · {{ r.any }}</p>
+            <a [href]="r.url" class="btn-recurs" target="_blank" rel="noopener noreferrer">Accedir</a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
-

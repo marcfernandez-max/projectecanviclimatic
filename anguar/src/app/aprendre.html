@@ -2,37 +2,33 @@
   <aside class="sidebar">
     <h3 class="sidebar-title">Temes</h3>
     <ul class="theme-list">
-      <li *ngFor="let tema of temas" 
-          [class.active]="temaSeleccionat.id === tema.id"
-          (click)="seleccionarTema(tema)">
-        <span class="theme-icon">{{ tema.icon }}</span>
-        <span class="theme-name">{{ tema.titol }}</span>
+      <li *ngFor="let t of temes" 
+          [class.active]="temaActual.id === t.id"
+          (click)="canviarTema(t)">
+        <span class="theme-name">{{ t.titol }}</span>
       </li>
     </ul>
   </aside>
 
   <main class="learn-content">
-    <div class="learn-card" *ngIf="temaSeleccionat">
+    <div class="learn-card" *ngIf="temaActual">
       <div class="learn-header">
-        <h2 class="learn-title">
-          <span class="learn-icon">{{ temaSeleccionat.icon }}</span>
-          {{ temaSeleccionat.titol }}
-        </h2>
+        <h2 class="learn-title">{{ temaActual.titol }}</h2>
       </div>
 
       <div class="learn-section">
         <h3 class="section-subtitle">Aprèn</h3>
-        <p class="learn-text">{{ temaSeleccionat.apren }}</p>
+        <p class="learn-text">{{ temaActual.apren }}</p>
       </div>
 
       <div class="learn-section">
         <h3 class="section-subtitle">Per què importa</h3>
-        <p class="learn-text">{{ temaSeleccionat.perQueImporta }}</p>
+        <p class="learn-text">{{ temaActual.perQueImporta }}</p>
       </div>
 
       <div class="learn-section">
         <h3 class="section-subtitle">Senyals a la teva ciutat</h3>
-        <p class="learn-text">{{ temaSeleccionat.senyals }}</p>
+        <p class="learn-text">{{ temaActual.senyals }}</p>
       </div>
 
     </div>
