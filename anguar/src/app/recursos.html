@@ -3,6 +3,23 @@
     <h1 class="page-title">Recursos i Enllaços</h1>
     <p class="page-subtitle">Guies, datasets i normativa sobre canvi climàtic a Barcelona.</p>
 
+    <section class="categoria-section noticies-section">
+      <h2 class="categoria-title">Notícies</h2>
+      <div class="noticies-quadrats">
+        <a *ngFor="let n of noticies" [routerLink]="['/noticia', n.id]" class="noticia-quadrat">
+          <span class="noticia-pais-badge">{{ n.pais }}</span>
+          <h3 class="noticia-quadrat-titol">{{ n.titol }}</h3>
+          <span class="noticia-quadrat-cta">Llegir notícia →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="normativa-inici">
+      <h2 class="categoria-title">Normativa</h2>
+      <p class="normativa-text">Consulta la normativa i més informació sobre canvi climàtic a la pàgina d'inici.</p>
+      <a routerLink="/" class="btn-recurs">Anar a Inici</a>
+    </section>
+
     <div class="recursos-grid">
       <div *ngFor="let cat of categories" class="categoria-section">
         <h2 class="categoria-title">{{ cat.nom }}</h2>

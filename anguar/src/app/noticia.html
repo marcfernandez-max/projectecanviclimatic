@@ -1,0 +1,11 @@
+<div class="noticia-container">
+  <div class="container">
+    <a routerLink="/recursos" class="btn-back">← Tornar a Recursos</a>
+    <article *ngIf="noticia" class="noticia-card">
+      <span class="noticia-pais">{{ noticia.pais }}</span>
+      <h1 class="noticia-titol">{{ noticia.titol }}</h1>
+      <p class="noticia-resum">{{ noticia.resum }}</p>
+    </article>
+    <p *ngIf="!noticia" class="noticia-missing">Notícia no trobada.</p>
+  </div>
+</div>

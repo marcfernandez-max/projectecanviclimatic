@@ -5,13 +5,28 @@
 }
 
 .seccion-hero {
-  background: linear-gradient(135deg, var(--verde-claro) 0%, #6b9b47 100%);
+  background: linear-gradient(135deg, var(--verde) 0%, var(--verde-claro) 100%);
   color: white;
+  padding: 4rem 0;
+}
+
+.hero-btn {
+  background-color: white !important;
+  color: var(--verde) !important;
+  font-weight: 700 !important;
+  padding: 0.75rem 1.5rem !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+}
+
+.placeholder-imagen {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2rem;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
 }
 
 .seccion-estadisticas {
-  background: linear-gradient(135deg, #5d4037 0%, #8d6e63 100%);
-  color: white;
+  background: #1a1a1a;
 }
 
 .tarjeta-volteable {
@@ -24,7 +39,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  transition: transform 0.6s;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   transform-style: preserve-3d;
 }
 
@@ -38,65 +53,105 @@
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
-  border-radius: 1rem;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .cara-frontal {
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg, #2d5016 0%, #4a7c2c 100%);
+  color: white;
 }
 
 .cara-trasera {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
+  background: white;
+  color: #1a1a1a;
   transform: rotateY(180deg);
 }
 
 .numero-dato {
   font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.label-dato {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.9;
+  text-align: center;
+}
+
+.cara-trasera h4 {
+  color: var(--verde);
   font-weight: 700;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.75rem;
 }
 
-.cara-trasera h4 { color: var(--verde); }
-.cara-trasera p { color: #333; }
-
-.seccion-hero a[mat-raised-button] {
-  background: white !important;
-  color: var(--verde) !important;
+.cara-trasera p {
+  color: #555;
+  line-height: 1.5;
+  font-size: 0.9rem;
 }
 
-.cara-frontal.mat-mdc-card,
-.cara-trasera.mat-mdc-card {
-  box-shadow: none;
+.seccion-audiencia {
+  background-color: var(--crema);
 }
 
-.seccion-audiencia { background-color: var(--crema); }
+.tarjeta-audiencia {
+  border: none !important;
+  border-radius: 1.5rem !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05) !important;
+  transition: transform 0.3s ease;
+}
 
-.tarjeta-audiencia { border-top: 5px solid var(--verde-claro); }
-.titulo-audiencia, .titulo-seccion { color: var(--verde); font-weight: 600; }
+.tarjeta-audiencia:hover {
+  transform: translateY(-5px);
+}
 
-.seccion-faq { background: white; }
-.faq-lista details {
+.titulo-audiencia,
+.titulo-seccion {
+  color: var(--verde);
+  font-weight: 700;
+}
+
+.seccion-faq {
+  background: white;
+}
+
+/* Bootstrap Accordion Overrides */
+.accordion-item {
+  border: none;
   margin-bottom: 1rem;
-  border-radius: 0.5rem;
+  border-radius: 1rem !important;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-.faq-lista summary {
-  padding: 1rem 1.25rem;
-  background: var(--crema);
+
+.accordion-button {
+  background-color: #f8fcf5;
   color: var(--verde);
   font-weight: 600;
-  cursor: pointer;
+  padding: 1.25rem;
 }
-.faq-lista details[open] summary {
-  background: var(--verde-claro);
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--verde);
   color: white;
 }
-.faq-resposta {
-  padding: 1.25rem;
-  background: #fafafa;
-  margin: 0;
+
+.accordion-button:focus {
+  box-shadow: none;
+  border-color: var(--verde-claro);
+}
+
+.accordion-body {
+  padding: 1.5rem;
   line-height: 1.7;
+  color: #444;
 }

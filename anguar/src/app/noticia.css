@@ -1,0 +1,8 @@
+.noticia-container { padding: 2rem 0; background: var(--crema); min-height: 40vh; }
+.btn-back { color: var(--verde); text-decoration: none; font-weight: 600; margin-bottom: 1.5rem; display: inline-block; }
+.btn-back:hover { text-decoration: underline; }
+.noticia-card { background: white; border-radius: 0.5rem; padding: 2rem; border-left: 4px solid var(--verde-claro); }
+.noticia-pais { font-size: 0.9rem; color: #666; text-transform: uppercase; letter-spacing: 0.05em; }
+.noticia-titol { font-size: 1.75rem; font-weight: 700; color: var(--verde); margin: 0.5rem 0 1rem 0; }
+.noticia-resum { font-size: 1.05rem; line-height: 1.6; margin: 0; color: #333; }
+.noticia-missing { color: #666; font-style: italic; }
